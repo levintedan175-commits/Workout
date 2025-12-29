@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+header,
+.main-nav {
+    width: 100%;
+    max-width: 100%;
+}
+
+header {
+    background: linear-gradient(135deg, #848B79 0%, #1a1a1a 90%);
+    padding: 14px 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transform: translateY(-80px);
+    opacity: 0;
+    animation: textSlideDown 1s ease-out 0.3s forwards;
+}
+
+@keyframes textSlideDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.main-nav {
+    background: #111;
+    padding: 18px 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    list-style: none;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu > li > a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 8px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+.menu > li > a:hover {
+    color: #848B79;
+}
+
+.menu > li > a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -6px;
+    left: 50%;
+    background: #848B79;
+    transition: all 0.4s ease;
+}
+
+.menu > li:hover > a::after {
+    width: 100%;
+    left: 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111;
+    min-width: 320px;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+    display: none;
+    z-index: 999;
+}
+
+.menu > li:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 16px 25px;
+    color: #ddd;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    transition: padding-left 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: #848B79;
+    color: #fff;
+    padding-left: 35px;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    .menu {
+        gap: 25px;
+    }
+    .menu > li > a {
+        font-size: 1.4rem;
+    }
+    .dropdown-menu {
+        min-width: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu > li > a {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    .dropdown-menu a {
+        font-size: 1rem;
+    }
+}
+
+
+.toji-image {
+    border: 5px double #e74c3c;
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.para::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* ==============================
+   VIDEO GRID (SUS + JOS IDENTIC)
+================================ */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* ==============================
+   VIDEO BLOCK
+================================ */
+.video-block {
+    border: 2px solid #222;
+    background: #000;
+}
+
+/* ==============================
+   VIDEO CONTAINER
+================================ */
+.video-container {
+    width: 100%;
+    height: 200px;        /* DIMENSIUNE FIXĂ – cheia problemei */
+    overflow: hidden;
+}
+
+/* VIDEO */
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;    /* păstrează proporțiile, taie surplusul */
+}
+
+/* ==============================
+   NUME EXERCIȚIU
+================================ */
+.video-name {
+    padding: 10px;
+    text-align: center;
+    background: #111;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+footer, 
+.footer-2 {
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+    border-top: 1px solid #555;
+    padding-top: 15px;
+}
+.responsive-img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.iframe-wrap{
+  width: 100%;
+  max-width: 900px;   /* optional */
+  margin: 0 auto;     /* optional, centru */
+}
+
+.iframe-wrap iframe{
+  width: 100%;
+  aspect-ratio: 16 / 9; /* schimbă dacă vrei 4/3 etc */
+  height: auto;
+  border: 0;
+  display: block;
+}
+
